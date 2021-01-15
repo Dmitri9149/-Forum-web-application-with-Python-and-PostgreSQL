@@ -38,3 +38,12 @@ def register():
             return redirect("/")
         else:
             return render_template("error.html",message="Rekisteröinti ei onnistunut")
+
+@app.route("/new")
+def new():
+    return render_template("new.html")
+
+@app.route("/logout")
+def logout():
+    users.logout()
+    return redirect("/")
